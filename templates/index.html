@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pengenalan Emosi dari Teks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikasi Pengenalan Emosi dari Teks</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="text">Masukkan teks:</label>
+                <textarea id="text" name="text" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Analisis Emosi</button>
+            </div>
+        </form>
+        {% if text %}
+        <div class="result">
+            <p>Teks: {{ text }}</p>
+            <p>Emosi: {{ emotion }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
